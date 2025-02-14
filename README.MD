@@ -12,8 +12,8 @@ Using **AI-powered insights** and **advanced keyword strategies**, this tool hel
 
 ## 🚀 Live Demo  
 🔗 **[Nebula Suite Hub](https://nebula-suite.netlify.app/)**  
-🔗 **[Nebula SEO](https://nebula-seo.netlify.app/)**  
-🔗 **[Nebula PPC](https://nebula-ppc.netlify.app/)**  
+🔗 **[Nebula SEO](https://static-nebula-seo.netlify.app/)**  
+🔗 **[Nebula PPC](https://static-nebula-ppc.netlify.app/)**  
 
 ---
 
