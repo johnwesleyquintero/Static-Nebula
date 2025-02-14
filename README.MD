@@ -1,7 +1,7 @@
 # 🌌 Nebula Suite 🚀  
 **Quantum SEO & PPC Optimization Tools**  
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/98b41a8a-99b2-4405-aef8-3f0b7547530d/deploy-status)](https://app.netlify.com/sites/asynd-nebula/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d09b389d-252d-46a2-9b6c-886a887835c8/deploy-status)](https://app.netlify.com/sites/static-nebula/deploys)
 
 Nebula Suite is a cutting-edge **SEO & PPC toolset** designed for **quantum-level marketing analysis**.  
 Using **AI-powered insights** and **advanced keyword strategies**, this tool helps **boost your online presence** like never before.  
