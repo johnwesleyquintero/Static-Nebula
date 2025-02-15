@@ -67,7 +67,7 @@ This will auto-refresh changes as you code.
 
 ### 🛣️ Roadmap
 
-###  Phase 1 - Basic SEO & PPC Analysis (✅ Completed)
+### ⚙️ Phase 1 - Basic SEO & PPC Analysis (✅ Completed)
 ### 🤖 Phase 2 - AI-powered copywriting (In Progress)
 ### 📊 Phase 3 - Advanced SEO metrics & API integration
 ### 🎨 Screenshots
