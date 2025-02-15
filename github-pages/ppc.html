@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nebula PPC Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --void-core: #0a0a0a;
+      --singularity-purple: #2d1b4d;
+      --quantum-teal: #4fd1c5;
+      --event-horizon: 1px solid #4b2e7a;
+      --background-gradient: linear-gradient(135deg, #0a0a0a, #7254a8);
+    }
+    body {
+      background: var(--background-gradient);
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+    }
+    .black-hole {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at 50% 50%, var(--singularity-purple) 0, var(--void-core) 80%);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.1;
+      animation: singularity 20s infinite linear;
+    }
+    .warp-field {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      border: 2px solid var(--quantum-teal);
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0.3;
+    }
+    @keyframes singularity {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    .quantum-input {
+      background: rgba(20, 10, 25, 0.9);
+      border: var(--event-horizon);
+      color: var(--text-color);
+      padding: 14px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      width: 100%;
+    }
+    .quantum-input:focus {
+      border-color: var(--quantum-teal);
+      box-shadow: 0 0 15px rgba(79, 209, 197, 0.3);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-gray-100">
+
+  <!-- Black Hole Background Effect -->
+  <div class="black-hole">
+    <div class="warp-field"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container mx-auto px-6 py-10 max-w-4xl bg-black/50 rounded-lg shadow-lg relative z-10">
+    <h1 class="text-center text-5xl font-bold mb-10">
+      <span class="bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent">
+        Nebula PPC Tool
+      </span>
+    </h1>
+    <p class="text-center text-xl font-light opacity-70 mb-10">
+      Quantum SEO Suite v2.718
+    </p>
+
+    <!-- Input Fields -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="space-y-6">
+        <div>
+          <label class="block mb-2 text-teal-400">Campaign Name</label>
+          <input type="text" class="quantum-input" id="campaign-name" placeholder="Enter campaign name">
+        </div>
+        <div>
+          <label class="block mb-2 text-teal-400">Target Keywords</label>
+          <textarea class="quantum-input" id="keywords" rows="2" placeholder="Comma-separated keywords"></textarea>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div>
+          <label class="block mb-2 text-teal-400">Ad Copy</label>
+          <textarea class="quantum-input" id="ad-copy" rows="5" placeholder="Enter ad copy"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="text-center space-x-4 mt-10">
+      <button class="bg-gradient-to-r from-indigo-600 to-purple-600 font-bold px-12 py-6 rounded-2xl text-xl hover:scale-105 transition-transform" onclick="runAnalysis()">🚀 Run Analysis</button>
+      <button class="bg-gradient-to-r from-teal-600 to-purple-600 font-bold px-12 py-6 rounded-2xl text-xl hover:scale-105 transition-transform" onclick="generateAdCopy()">🤖 Generate Ad Copy</button>
+    </div>
+
+    <!-- Results Section -->
+    <div class="bg-void-core backdrop-blur-lg border border-purple-900/50 mt-12 p-8 rounded-2xl">
+      <h2 class="text-center mb-6 text-2xl text-teal-400">Analysis Report</h2>
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function runAnalysis() {
+      const campaignName = document.getElementById('campaign-name').value;
+      const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k);
+      const adCopy = document.getElementById('ad-copy').value;
+
+      let report = '=== Campaign Analysis ===\n\n';
+      report += `Campaign Name: ${campaignName}\n\n`;
+      report += `Keywords: ${keywords.join(', ')}\n\n`;
+      report += `Ad Copy: ${adCopy}\n\n`;
+
+      document.getElementById('results').innerHTML = `
+        <div class="p-4 bg-black/50 rounded-lg">
+          <pre class="whitespace-pre-wrap">${report}</pre>
+        </div>`;
+    }
+
+    function generateAdCopy() {
+      const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k);
+      const adCopy = `🚀 Boost your sales with ${keywords.join(', ')}! 🚀`;
+      document.getElementById('ad-copy').value = adCopy;
+    }
+  </script>
+
+</body>
+</html>
