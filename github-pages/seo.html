@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #0a0a0a, #7254a8); color: #e0e0e0; font-family: Arial, sans-serif; }
+    .black-hole { width: 400px; height: 400px; background: radial-gradient(circle at 50% 50%, #2d1b4d 0, #0a0a0a 80%); position: relative; animation: rotate 20s infinite linear; }
+    .warp-field { position: absolute; width: 120%; height: 120%; border: 2px solid #4fd1c5; border-radius: 50%; filter: blur(30px); opacity: 0.3; }
+    @keyframes rotate { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+    .quantum-input { background: rgba(20, 10, 25, 0.9); border: 1px solid #4b2e7a; color: #e0e0e0; padding: 14px; font-size: 1.1rem; border-radius: 8px; width: 100%; }
+    .quantum-input:focus { border-color: #4fd1c5; box-shadow: 0 0 15px rgba(79, 209, 197, 0.3); }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="container mx-auto px-6 py-10 max-w-3xl bg-black/50 rounded-lg shadow-lg">
+    <h1 class="text-center text-4xl font-bold mb-8">🚀 Nebula SEO Tool</h1>
+
+    <!-- API Key Input -->
+    <div class="mb-6">
+      <label class="block mb-2 text-teal-400">API Key</label>
+      <input type="text" id="apiKey" class="quantum-input" placeholder="Enter API key..." oninput="checkConnectionStatus()">
+      <button onclick="clearApiKey()" class="mt-2 w-full bg-red-500 text-white py-2 rounded-md hover:scale-105 transition">Clear API Key</button>
+      <div id="connectionStatus" class="mt-2 text-center text-sm"></div>
+    </div>
+
+    <!-- Product Information -->
+    <div class="mb-6">
+      <label class="block mb-2 text-teal-400">Product Title</label>
+      <textarea id="title" class="quantum-input" rows="2"></textarea>
+    </div>
+    <div class="mb-6">
+      <label class="block mb-2 text-teal-400">Target Keywords</label>
+      <textarea id="keywords" class="quantum-input" rows="2"></textarea>
+    </div>
+    <div class="mb-6">
+      <label class="block mb-2 text-teal-400">Product Description</label>
+      <textarea id="description" class="quantum-input" rows="4"></textarea>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="text-center space-x-4">
+      <button onclick="launchAnalysis()" class="bg-purple-600 hover:scale-105 font-bold px-8 py-4 rounded-lg text-lg transition">⚛️ Analyze</button>
+      <button onclick="summonAIWisdom()" class="bg-teal-600 hover:scale-105 font-bold px-8 py-4 rounded-lg text-lg transition">🧠 AI Insights</button>
+    </div>
+
+    <!-- Results -->
+    <div id="results" class="mt-8 p-4 bg-gray-900 rounded-lg text-sm"></div>
+    <div id="ai-output" class="mt-4 p-4 bg-gray-800 rounded-lg text-sm"></div>
+  </div>
+
+  <script>
+    // Check API Key Connection
+    function checkConnectionStatus() {
+      const apiKey = document.getElementById('apiKey').value;
+      const status = document.getElementById('connectionStatus');
+      status.innerHTML = apiKey ? '✅ Connected' : '❌ No API Key - Running Offline Mode';
+      status.style.color = apiKey ? 'lightgreen' : 'red';
+    }
+
+    function clearApiKey() {
+      document.getElementById('apiKey').value = '';
+      checkConnectionStatus();
+    }
+
+    // SEO Analysis Function
+    function launchAnalysis() {
+      const title = document.getElementById('title').value;
+      const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim());
+      const description = document.getElementById('description').value;
+      const resultsDiv = document.getElementById('results');
+
+      resultsDiv.innerHTML = '🔍 Analyzing...';
+      
+      setTimeout(() => {
+        resultsDiv.innerHTML = `
+          <strong>Title Score:</strong> ${title.length > 60 ? '⚠️ Too long' : '✅ Good'} <br>
+          <strong>Keyword Density:</strong> ${keywords.length > 7 ? '⚠️ Too many keywords' : `${keywords.length} keywords`} <br>
+          <strong>Description Quality:</strong> ${description.length > 150 ? '✅ Optimal' : '⚠️ Too short'}
+        `;
+      }, 1500);
+    }
+
+    // AI Insights (Fake API Simulation)
+    async function summonAIWisdom() {
+      const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim());
+      const aiOutput = document.getElementById('ai-output');
+
+      aiOutput.innerHTML = '🧠 Consulting AI...';
+      
+      setTimeout(() => {
+        aiOutput.innerHTML = `
+          <strong>🤖 AI Recommendations:</strong> <br>
+          ✅ Suggested Title: "${keywords[0] || 'Amazing Product'} - Boost Your Results!" <br>
+          🔥 Suggested Keywords: ${keywords.join(', ')}
+        `;
+      }, 2000);
+    }
+
+    // On Page Load
+    document.addEventListener('DOMContentLoaded', () => {
+      checkConnectionStatus();
+      document.getElementById('apiKey').addEventListener('input', checkConnectionStatus);
+    });
+  </script>
+</body>
+</html>
