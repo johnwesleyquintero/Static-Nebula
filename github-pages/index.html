@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nebula Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --void-core: #0a0a0a;
+      --singularity-purple: #2d1b4d;
+      --quantum-teal: #4fd1c5;
+      --event-horizon: 1px solid #4b2e7a;
+      --background-gradient: linear-gradient(135deg, #0a0a0a, #7254a8);
+    }
+    body {
+      background: var(--background-gradient);
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+    }
+    .black-hole {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at 50% 50%, var(--singularity-purple) 0, var(--void-core) 80%);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.1;
+      animation: singularity 20s infinite linear;
+    }
+    .warp-field {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      border: 2px solid var(--quantum-teal);
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0.3;
+    }
+    @keyframes singularity {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    .nebula-button {
+      display: inline-block;
+      background: linear-gradient(to right, #4fd1c5, #7254a8);
+      padding: 16px 32px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+    }
+    .nebula-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 20px rgba(79, 209, 197, 0.3);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-center">
+
+  <!-- Background Black Hole Effect -->
+  <div class="black-hole">
+    <div class="warp-field"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="relative z-10">
+    <h1 class="text-5xl font-bold mb-10">
+      <span class="bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent">
+        Nebula Suite
+      </span>
+    </h1>
+    <p class="text-xl font-light opacity-70 mb-10">Quantum Tools for SEO and PPC</p>
+
+    <!-- Navigation Buttons -->
+    <div class="space-x-6">
+      <a href="https://static-nebula-seo.netlify.app" class="nebula-button">🚀 Nebula SEO</a>
+      <a href="https://static-nebula-ppc.netlify.app" class="nebula-button">🤖 Nebula PPC</a>
+    </div>
+  </div>
+
+</body>
+</html>
